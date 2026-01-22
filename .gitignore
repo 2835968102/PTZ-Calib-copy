@@ -36,6 +36,9 @@ out/
 debug/
 release/
 
+# Third-party dependencies
+3rdparty/
+
 # Compiled Object files
 *.o
 *.obj

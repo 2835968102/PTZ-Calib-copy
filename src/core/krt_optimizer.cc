@@ -315,30 +315,30 @@ void KRTOptimizer::Add2d2dConstraints(const Camera& cam_ref, const std::vector<c
   }
 
   // fix some parameters
-  if (problem_.HasParameterBlock(cam_curr_local_param_.data()) && problem_.GetParameterization(cam_curr_local_param_.data()) == nullptr) {
-    ceres::SubsetParameterization* constant_parameterization = nullptr;
+  if (problem_.HasParameterBlock(cam_curr_local_param_.data()) && problem_.GetManifold(cam_curr_local_param_.data()) == nullptr) {
+    ceres::SubsetManifold* constant_parameterization = nullptr;
     switch (factor_type_) {
       case F:
         constant_parameterization =
-            new ceres::SubsetParameterization(15, {1, 2, 3, 7, 8, 9, 10, 11, 12, 13, 14});  // fy, cx, cy, t[0:2], dist[0:4]
-        problem_.SetParameterization(cam_curr_local_param_.data(), constant_parameterization);
+            new ceres::SubsetManifold(15, {1, 2, 3, 7, 8, 9, 10, 11, 12, 13, 14});  // fy, cx, cy, t[0:2], dist[0:4]
+        problem_.SetManifold(cam_curr_local_param_.data(), constant_parameterization);
         break;
 
       case Fxfy:
         constant_parameterization =
-            new ceres::SubsetParameterization(15, {2, 3, 7, 8, 9, 10, 11, 12, 13, 14});  // cx, cy, t[0:2], dist[0:4]
-        problem_.SetParameterization(cam_curr_local_param_.data(), constant_parameterization);
+            new ceres::SubsetManifold(15, {2, 3, 7, 8, 9, 10, 11, 12, 13, 14});  // cx, cy, t[0:2], dist[0:4]
+        problem_.SetManifold(cam_curr_local_param_.data(), constant_parameterization);
         break;
 
       case FDist:
         constant_parameterization =
-            new ceres::SubsetParameterization(15, {1, 2, 3, 7, 8, 9, 11, 12, 13, 14});  // fy, cx, cy, t[0:2], dist[1:4]
-        problem_.SetParameterization(cam_curr_local_param_.data(), constant_parameterization);
+            new ceres::SubsetManifold(15, {1, 2, 3, 7, 8, 9, 11, 12, 13, 14});  // fy, cx, cy, t[0:2], dist[1:4]
+        problem_.SetManifold(cam_curr_local_param_.data(), constant_parameterization);
         break;
 
       case FxfyDist:
-        constant_parameterization = new ceres::SubsetParameterization(15, {2, 3, 7, 8, 9, 11, 12, 13, 14});  // cx, cy, t[0:2], dist[1:4]
-        problem_.SetParameterization(cam_curr_local_param_.data(), constant_parameterization);
+        constant_parameterization = new ceres::SubsetManifold(15, {2, 3, 7, 8, 9, 11, 12, 13, 14});  // cx, cy, t[0:2], dist[1:4]
+        problem_.SetManifold(cam_curr_local_param_.data(), constant_parameterization);
         break;
 
       default:

@@ -123,6 +123,8 @@ bool PtzIncrementalOptimizer::Solve(vector<Camera>& cameras, std::unordered_set<
 
     return true;
   }
+
+  return false;
 }
 
 void PtzIncrementalOptimizer::SetSeedImageId(const std::vector<long>& image_ids)

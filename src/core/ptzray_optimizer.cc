@@ -856,19 +856,19 @@ void PTZRayOptimizer::AddConstraints2d2d()
     long ic_id = shared_ic_ids_[i];
 
     if (problem_.HasParameterBlock(intrinsics_param_.at(ic_id).data()) &&
-        problem_.GetParameterization((intrinsics_param_.at(ic_id).data())) == nullptr) {
-      ceres::SubsetParameterization* constant_parameterization_i = nullptr;
+        problem_.GetManifold((intrinsics_param_.at(ic_id).data())) == nullptr) {
+      ceres::SubsetManifold* constant_parameterization_i = nullptr;
       switch (type_) {
         case PTZRay:
-          constant_parameterization_i = new ceres::SubsetParameterization(9, {2, 3, 4, 5, 6, 7, 8});  // cx, cy, k1, k2, k3, p1, p2
-          problem_.SetParameterization(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
+          constant_parameterization_i = new ceres::SubsetManifold(9, {2, 3, 4, 5, 6, 7, 8});  // cx, cy, k1, k2, k3, p1, p2
+          problem_.SetManifold(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
           break;
 
         case PTZRayDist:
         case PTZRayFxfyDist:
         case PTZRayDistDisp:
-          constant_parameterization_i = new ceres::SubsetParameterization(9, {2, 3, 5, 6, 7, 8});  // cx, cy, k2, k3, p1, p2
-          problem_.SetParameterization(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
+          constant_parameterization_i = new ceres::SubsetManifold(9, {2, 3, 5, 6, 7, 8});  // cx, cy, k2, k3, p1, p2
+          problem_.SetManifold(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
           break;
 
         default:
@@ -877,9 +877,9 @@ void PTZRayOptimizer::AddConstraints2d2d()
     }
 
     if (problem_.HasParameterBlock(extrinsics_param_.at(i).data()) &&
-        problem_.GetParameterization(extrinsics_param_.at(i).data()) == nullptr) {
-      auto* constant_parameterization_i = new ceres::SubsetParameterization(6, {3, 4, 5});  // t1, t2, t3
-      problem_.SetParameterization(extrinsics_param_.at(i).data(), constant_parameterization_i);
+        problem_.GetManifold(extrinsics_param_.at(i).data()) == nullptr) {
+      auto* constant_parameterization_i = new ceres::SubsetManifold(6, {3, 4, 5});  // t1, t2, t3
+      problem_.SetManifold(extrinsics_param_.at(i).data(), constant_parameterization_i);
     }
   }
 }
@@ -929,19 +929,19 @@ void PTZRayOptimizer::AddConstraints2d3d()
     long ic_id = shared_ic_ids_[i];
 
     if (problem_.HasParameterBlock(intrinsics_param_.at(ic_id).data()) &&
-        problem_.GetParameterization((intrinsics_param_.at(ic_id).data())) == nullptr) {
-      ceres::SubsetParameterization* constant_parameterization_i = nullptr;
+        problem_.GetManifold((intrinsics_param_.at(ic_id).data())) == nullptr) {
+      ceres::SubsetManifold* constant_parameterization_i = nullptr;
       switch (type_) {
         case PTZRay:
-          constant_parameterization_i = new ceres::SubsetParameterization(9, {2, 3, 4, 5, 6, 7, 8});  // cx, cy, k1, k2, k3, p1, p2
-          problem_.SetParameterization(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
+          constant_parameterization_i = new ceres::SubsetManifold(9, {2, 3, 4, 5, 6, 7, 8});  // cx, cy, k1, k2, k3, p1, p2
+          problem_.SetManifold(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
           break;
 
         case PTZRayDist:
         case PTZRayFxfyDist:
         case PTZRayDistDisp:
-          constant_parameterization_i = new ceres::SubsetParameterization(9, {2, 3, 5, 6, 7, 8});  // cx, cy, k2, k3, p1, p2
-          problem_.SetParameterization(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
+          constant_parameterization_i = new ceres::SubsetManifold(9, {2, 3, 5, 6, 7, 8});  // cx, cy, k2, k3, p1, p2
+          problem_.SetManifold(intrinsics_param_.at(ic_id).data(), constant_parameterization_i);
           break;
 
         default:
@@ -950,9 +950,9 @@ void PTZRayOptimizer::AddConstraints2d3d()
     }
 
     if (problem_.HasParameterBlock(extrinsics_param_.at(i).data()) &&
-        problem_.GetParameterization(extrinsics_param_.at(i).data()) == nullptr) {
-      auto* constant_parameterization_i = new ceres::SubsetParameterization(6, {3, 4, 5});  // t1, t2, t3
-      problem_.SetParameterization(extrinsics_param_.at(i).data(), constant_parameterization_i);
+        problem_.GetManifold(extrinsics_param_.at(i).data()) == nullptr) {
+      auto* constant_parameterization_i = new ceres::SubsetManifold(6, {3, 4, 5});  // t1, t2, t3
+      problem_.SetManifold(extrinsics_param_.at(i).data(), constant_parameterization_i);
     }
   }
 }
