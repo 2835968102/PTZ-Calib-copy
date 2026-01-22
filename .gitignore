@@ -39,6 +39,9 @@ release/
 # Third-party dependencies
 3rdparty/
 
+# Build environment
+bashrc
+
 # Compiled Object files
 *.o
 *.obj
@@ -103,11 +106,22 @@ MANIFEST
 results/
 output/
 outputs/
+output-synthetic-offline/
+output-synthetic-online/
+output-worldcup14-offline/
+output-worldcup14-online/
 logs/
 *.csv
 *.txt.bak
 
 # Data files (uncomment if you don't want to track data)
-# data/
+data/
 # *.dat
 # *.bin
+
+# Archive files
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+PTZ-Calib*.tar*

@@ -12,13 +12,13 @@ set -e
 ./install/bin/run_ptz_ba -i data/synthetic/offline/scene_09 -f data/synthetic/offline_matches/scene_09 -a data/synthetic/offline/scene_09/scene_09.json -o output-synthetic-offline
 ./install/bin/run_ptz_ba -i data/synthetic/offline/scene_10 -f data/synthetic/offline_matches/scene_10 -a data/synthetic/offline/scene_10/scene_10.json -o output-synthetic-offline
 
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_01.json --gt data/synthetic/gt/scene_01.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_02.json --gt data/synthetic/gt/scene_02.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_03.json --gt data/synthetic/gt/scene_03.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_04.json --gt data/synthetic/gt/scene_04.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_05.json --gt data/synthetic/gt/scene_05.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_06.json --gt data/synthetic/gt/scene_06.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_07.json --gt data/synthetic/gt/scene_07.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_08.json --gt data/synthetic/gt/scene_08.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_09.json --gt data/synthetic/gt/scene_09.json
-python scripts/eval_synthetic.py --pred output-synthetic-offline/scene_10.json --gt data/synthetic/gt/scene_10.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_01.json --gt data/synthetic/gt/scene_01.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_02.json --gt data/synthetic/gt/scene_02.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_03.json --gt data/synthetic/gt/scene_03.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_04.json --gt data/synthetic/gt/scene_04.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_05.json --gt data/synthetic/gt/scene_05.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_06.json --gt data/synthetic/gt/scene_06.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_07.json --gt data/synthetic/gt/scene_07.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_08.json --gt data/synthetic/gt/scene_08.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_09.json --gt data/synthetic/gt/scene_09.json
+python3 scripts/eval_synthetic.py --pred output-synthetic-offline/scene_10.json --gt data/synthetic/gt/scene_10.json

@@ -9,10 +9,10 @@ set -e
 ./install/bin/run_ptz_reloc --ref_images data/worldcup14/offline/NED_ARG --ref_features data/worldcup14/offline_matches/NED_ARG --ref_params output-worldcup14-offline/NED_ARG.json --test_images data/worldcup14/online/URU_ENG --test_features data/worldcup14/online_matches/URU_ENG --output output-worldcup14-online
 ./install/bin/run_ptz_reloc --ref_images data/worldcup14/offline/USA_GER --ref_features data/worldcup14/offline_matches/USA_GER --ref_params output-worldcup14-offline/USA_GER.json --test_images data/worldcup14/online/CRO_MEX --test_features data/worldcup14/online_matches/CRO_MEX --output output-worldcup14-online
 
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/ARG_SUI.json
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/BRA_CRO.json
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/CRO_MEX.json
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/ESP_CHI.json
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/FRA_GER.json
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/SUI_FRA.json
-python scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/URU_ENG.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/ARG_SUI.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/BRA_CRO.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/CRO_MEX.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/ESP_CHI.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/FRA_GER.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/SUI_FRA.json
+python3 scripts/eval_worldcup.py --gt_dir data/worldcup14/gt/test --pred output-worldcup14-online/URU_ENG.json
