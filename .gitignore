@@ -103,6 +103,8 @@ outputs/
 logs/
 *.csv
 *.txt.bak
+data/
+
 
 # Data files (uncomment if you don't want to track data)
 # data/
