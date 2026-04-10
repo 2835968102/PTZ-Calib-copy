@@ -9,7 +9,7 @@ source $OPTPATH/bashrc
 
 echo "Configuring and building PTZ-Calib ..."
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release \
+cmake -DCMAKE_BUILD_TYPE=Debug \
       -DCMAKE_INSTALL_PREFIX=$OPTPATH \
       ..
 
